@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Student Registration Form</title>
+    <link rel="stylesheet" href="asset\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+    <script src="asset\bootstrap-4.3.1-dist\jquery-3.4.1.min.js"></script>
+    <script src="asset\bootstrap-4.3.1-dist\js\bootstrap.min.js"></script>
 <?php
     include 'maincode.php';
     $validation=array(
@@ -111,7 +114,7 @@
           <input type="number" name="computer" value="<?php echo isset($_POST['computer'])?$_POST['computer']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['computer'] ?></span>
           <br>
           <br>
-          <input type="submit" name="submit" value="SUBMIT FORM">
+          <input type="submit" name="submit" class="btn" value="SUBMIT FORM">
       </fieldset>
       <br>
       <br>
