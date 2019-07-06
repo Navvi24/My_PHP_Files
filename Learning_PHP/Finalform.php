@@ -116,14 +116,6 @@
                   <input type="number" class="form-control" placeholder="Enter Computer Marks" name="computer" value="<?php echo isset($_POST['computer'])?$_POST['computer']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['computer'] ?></span>
               </div>
           </div>
-
-
-
-
-
-
-
-
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <input type="submit" name="submit" class="btn btn-primary" value="SUBMIT FORM">
@@ -131,14 +123,16 @@
           </div>
     </form>
     <?php
-    echo "<h2>YOUR INPUT</h2>";
     if (isset($_POST['submit']))
     {
       if($validation['valid']==true)
       {
         ?>
+        <div class="container">
+
+
         <h1>XYZ School</h1>
-        <table>
+        <table class="table  table-hover">
           <tr>
             <th colspan="2">PERSONAL INFORMATION</th>
           </tr>
@@ -190,6 +184,7 @@
             <td><?php echo $_POST["computer"];?></td>
           </tr>
         </table>
+        </div>
       <?php
       }
     }
