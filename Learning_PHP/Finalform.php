@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="asset\bootstrap-4.3.1-dist\css\bootstrap.min.css">
     <script src="asset\bootstrap-4.3.1-dist\jquery-3.4.1.min.js"></script>
     <script src="asset\bootstrap-4.3.1-dist\js\bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 <?php
     include 'maincode.php';
     $validation=array(
@@ -30,98 +31,107 @@
     }
 
  ?>
-    <style media="screen">
-      b
-      {
-        font-size: 20px;
-      }
-      .error {color: #FF0000;}
-      table,th,td,tr
-      {
-          border: 2px solid black;
-          border-collapse:collapse;
-          width:50%;
-          text-align:center;
-          padding:10px;
-          margin:30px 340px;
-      }
-      .col1
-      {
-        width:50%;
-      }
-      h1,h2
-      {
-        text-align:center;
-      }
-      h1
-      {
-        font-size:60px;
-        margin-bottom : -8px;
-      }
-    </style>
   </head>
   <body>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-      <fieldset>
-        <legend><b>Student Information Form</b></legend>
-          Name :-
-          <input type="text" name="name" value="<?php echo isset($_POST['name'])?$_POST['name']:''; ?>"> <span class="error">*<?php echo $validation['errMsg']['name'] ?></span>
-          <br>
-          <br>
-          Rollno :-
-          <input type="number" name="rollno" value="<?php echo isset($_POST['rollno'])?$_POST['rollno']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['roll'] ?></span>
-          <br>
-          <br>
-          Father Name :-
-          <input type="text" name="father" value="<?php echo isset($_POST['father'])?$_POST['father']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['father'] ?></span>
-          <br>
-          <br>
-          Mother Name :-
-          <input type="text" name="mother" value="<?php echo isset($_POST['mother'])?$_POST['mother']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['mother'] ?></span>
-          <br>
-          <br>
-          Class :-
-          <input type="text" name="cls" value="<?php echo isset($_POST['cls'])?$_POST['cls']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['cls'] ?></span>
-          <br>
-          <br>
-          Gender :-
-          <input type="radio" name="gender" value="Male">Male
-          <input type="radio" name="gender" value="Female">Female <span class="error">*<?php echo $validation['errMsg']['gender'] ?></span>
-          <br>
-          <br>
-          <br>
-          <b>Enter Subjects Marks out of 100:-</b>
-          <br>
-          <br>
-          <br>
-          English :-
-          <input type="number" name="english" value="<?php echo isset($_POST['english'])?$_POST['english']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['english'] ?></span>
-          <br>
-          <br>
-          Hindi :-
-          <input type="number" name="hindi" value="<?php echo isset($_POST['hindi'])?$_POST['hindi']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['hindi'] ?></span>
-          <br>
-          <br>
-          Maths :-
-          <input type="number" name="math" value="<?php echo isset($_POST['math'])?$_POST['math']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['math'] ?></span>
-          <br>
-          <br>
-          Social :-
-          <input type="number" name="social" value="<?php echo isset($_POST['social'])?$_POST['social']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['social'] ?></span>
-          <br>
-          <br>
-          Computer :-
-          <input type="number" name="computer" value="<?php echo isset($_POST['computer'])?$_POST['computer']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['computer'] ?></span>
-          <br>
-          <br>
-          <input type="submit" name="submit" class="btn" value="SUBMIT FORM">
-      </fieldset>
-      <br>
-      <br>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="form-horizontal">
+        <h2>Student Information Form</h2>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Name">Name :-</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Enter Name" name="name" value="<?php echo isset($_POST['name'])?$_POST['name']:''; ?>"> <span class="error">*<?php echo $validation['errMsg']['name'] ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Rollno">Rollno :-</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Enter Rollno" name="rollno" value="<?php echo isset($_POST['rollno'])?$_POST['rollno']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['roll'] ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="FatherName">Father Name :-</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter Father Name" name="father" value="<?php echo isset($_POST['father'])?$_POST['father']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['father'] ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="MotherName">Mother Name :-</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter Mother Name" name="mother" value="<?php echo isset($_POST['mother'])?$_POST['mother']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['mother'] ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="class">Class :- </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter Class" name="cls" value="<?php echo isset($_POST['cls'])?$_POST['cls']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['cls'] ?></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="gender">Gender :- </label>
+            <div class="col-sm-10">
+              <label class="container">Male
+                <input type="radio" name="gender" value="Male">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Female
+                <input type="radio" name="gender" value="Female"> <span class="error">*<?php echo $validation['errMsg']['gender'] ?></span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+        </div>
+
+
+
+          <h2>Enter Subjects Marks out of 100:-</h2>
+
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="English">English :-</label>
+              <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Enter English Marks" name="english" value="<?php echo isset($_POST['english'])?$_POST['english']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['english'] ?></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="English">Hindi :-</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" placeholder="Enter Hindi Marks" name="hindi" value="<?php echo isset($_POST['hindi'])?$_POST['hindi']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['hindi'] ?></span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="Maths">Maths :-</label>
+              <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Enter Math Marks" name="math" value="<?php echo isset($_POST['math'])?$_POST['math']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['math'] ?></span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="Social">Social :-</label>
+              <div class="col-sm-10">
+                  <input type="number" class="form-control" placeholder="Enter Social Marks" name="social" value="<?php echo isset($_POST['social'])?$_POST['social']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['social'] ?></span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="Computer">Computer :-</label>
+              <div class="col-sm-10">
+                  <input type="number" class="form-control" placeholder="Enter Computer Marks" name="computer" value="<?php echo isset($_POST['computer'])?$_POST['computer']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['computer'] ?></span>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" name="submit" class="btn btn-primary" value="SUBMIT FORM">
+            </div>
+          </div>
     </form>
-<h1></h1>
     <?php
-    echo "<h1><b>YOUR INPUT</b></h1>";
+    echo "<h2>YOUR INPUT</h2>";
     if (isset($_POST['submit']))
     {
       if($validation['valid']==true)
