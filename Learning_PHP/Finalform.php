@@ -37,31 +37,31 @@
       <h2>PERSONAL INFORMATION</h2>
         <div class="form-group">
             <label class="control-label col-sm-2" for="Name">Name :-</label>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
                 <input type="text" class="form-control" name="name" value="<?php echo isset($_POST['name'])?$_POST['name']:''; ?>"> <span class="error">*<?php echo $validation['errMsg']['name'] ?></span>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="Rollno">Rollno :-</label>
-            <div class="col-sm-1">
+            <div class="col-sm-12">
               <input type="number" class="form-control"  name="rollno" value="<?php echo isset($_POST['rollno'])?$_POST['rollno']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['roll'] ?></span>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="FatherName">Father Name :-</label>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
               <input type="text" class="form-control"  name="father" value="<?php echo isset($_POST['father'])?$_POST['father']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['father'] ?></span>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="MotherName">Mother Name :-</label>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
               <input type="text" class="form-control" name="mother" value="<?php echo isset($_POST['mother'])?$_POST['mother']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['mother'] ?></span>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="class">Class :- </label>
-            <div class="col-sm-1">
+            <div class="col-sm-12">
               <input type="text" class="form-control"  name="cls" value="<?php echo isset($_POST['cls'])?$_POST['cls']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['cls'] ?></span>
             </div>
         </div>
@@ -84,32 +84,32 @@
 
           <div class="form-group">
               <label class="control-label col-sm-2" for="English">English :-</label>
-              <div class="col-sm-1">
+              <div class="col-sm-12">
               <input type="number" class="form-control"  name="english" value="<?php echo isset($_POST['english'])?$_POST['english']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['english'] ?></span>
               </div>
           </div>
 
           <div class="form-group">
               <label class="control-label col-sm-2" for="English">Hindi :-</label>
-              <div class="col-sm-1">
+              <div class="col-sm-12">
                 <input type="number" class="form-control"  name="hindi" value="<?php echo isset($_POST['hindi'])?$_POST['hindi']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['hindi'] ?></span>
               </div>
           </div>
           <div class="form-group">
               <label class="control-label col-sm-2" for="Maths">Maths :-</label>
-              <div class="col-sm-1">
+              <div class="col-sm-12">
               <input type="number" class="form-control" name="math" value="<?php echo isset($_POST['math'])?$_POST['math']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['math'] ?></span>
               </div>
           </div>
           <div class="form-group">
               <label class="control-label col-sm-2" for="Social">Social :-</label>
-              <div class="col-sm-1">
+              <div class="col-sm-12">
                   <input type="number" class="form-control"  name="social" value="<?php echo isset($_POST['social'])?$_POST['social']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['social'] ?></span>
               </div>
           </div>
           <div class="form-group">
               <label class="control-label col-sm-2" for="Computer">Computer :-</label>
-              <div class="col-sm-1">
+              <div class="col-sm-12">
                   <input type="number" class="form-control"  name="computer" value="<?php echo isset($_POST['computer'])?$_POST['computer']:'';?>"> <span class="error">*<?php echo $validation['errMsg']['computer'] ?></span>
               </div>
           </div>
@@ -119,7 +119,6 @@
             </div>
           </div>
 
-      */
     </form>
     <?php
     if (isset($_POST['submit']))
