@@ -62,7 +62,7 @@ function studentdetail_row( $conn )
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="resultdetail.php?rollno=<?php echo $row['rollno'];?>&cls=<?php echo $row['class']; ?>">Get Score</a></li>
-                <li><a href="index.php?rollno=<?php echo $row['rollno'];?>">Edit Data</a></li>
+                <li><a href="mainpage.php?rollno=<?php echo $row['rollno'];?>">Edit Data</a></li>
                 <li><a href="deletestudentdetail.php">Delete Data</a></li>
                 <li><a href="studentmarksheet.php?rollno=<?php echo $row['rollno'];?>" name="marksheetlink">Marksheet</a></li>
               </ul>
@@ -227,4 +227,4 @@ function get_fee_detail( $conn )
     }
   }
   return $row;
-}
+} 

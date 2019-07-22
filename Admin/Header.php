@@ -75,7 +75,7 @@ require_once('functions.php');
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Add Student Detail</a></li>
+            <li class="active"><a href="mainpage.php"><i class="fa fa-circle-o"></i> Add Student Detail</a></li>
             <li><a href="DATA_studentdetail.php"><i class="fa fa-circle-o"></i>Manage Student Detail</a></li>
           </ul>
         </li>

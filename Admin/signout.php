@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_unset();
-header("Location: http://localhost/My_PHP_Files/Admin/loginpage.php");
+header("Location: http://localhost/My_PHP_Files/Admin/index.php");

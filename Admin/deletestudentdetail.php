@@ -8,8 +8,8 @@ include "header.php"
          Manage Student
        </h1>
        <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li class="active">Manage Student</li>
+         <li><a href="#"><i class="fa fa-user"></i> Home</a></li>
+         <li class="active">Delete Student Detail</li>
        </ol>
      </section>
 

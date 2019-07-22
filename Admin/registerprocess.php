@@ -6,7 +6,7 @@ if($_POST['password'] == $_POST['retypepass'])
   $stmt = $conn->prepare($query);
   $data = [$_POST['username'],$_POST['password']];
   $stmt->execute( $data );
-  header("Location: http://localhost/My_PHP_Files/Admin/loginpage.php?reg=1");
+  header("Location: http://localhost/My_PHP_Files/Admin/index.php?reg=1");
   die();
 }
 else

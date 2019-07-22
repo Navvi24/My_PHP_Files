@@ -10,12 +10,12 @@ if($res = $conn->query($query))
   {
     $_SESSION['loggedin'] = 1;
     $_SESSION['user'] = $row['username'];
-    header("Location: http://localhost/My_PHP_Files/Admin/index.php");
+    header("Location: http://localhost/My_PHP_Files/Admin/mainpage.php");
     die();
   }
   else
   {
-    header("Location: http://localhost/My_PHP_Files/Admin/loginpage.php?err=1");
+    header("Location: http://localhost/My_PHP_Files/Admin/index.php?err=1");
     die();
   }
 }

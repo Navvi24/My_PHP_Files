@@ -1,110 +1,83 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  </head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>STUDENT</b>detail</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">SIGN IN</p>
 
-include "header.php";
-if (isset($_GET['rollno']))
-{
-  $studata = get_student_detail($conn);
-}
-else
-{
-}
- ?>
- <div class="content-wrapper">
-     <!-- Content Header (Page header) -->
-     <section class="content-header">
-       <h1>
-         Student Details
-       </h1>
-       <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-user"></i> STUDENT DETAILS</a></li>
-         <li class="active">Add Student Details</li>
-       </ol>
-     </section>
-
-     <!-- Main content -->
-     <section class="content">
-       <section class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">Student Details</h3>
-            </div>
-            <div class="box-body">
-              <form role="form" action="studentprocess.php" method="post">
-                <div class="form-row">
-                  <div class="form-group col-md-11">
-                      <label for="Name">Name</label>
-                      <input type="text" class="form-control" name="name" value="<?php if (isset($_GET['rollno'])){echo $studata['name'];} ?>">
-                  </div>
-                  <div class="form-group col-md-1">
-                    <label for="Rollno">Rollno.</label>
-                    <input type="number" class="form-control" name="rollno" value="<?php if (isset($_GET['rollno'])){echo $studata['rollno'];} ?>">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="FatherName">Father Name</label>
-                    <input type="text" class="form-control" name="father" value="<?php if (isset($_GET['rollno'])){echo $studata['fatherName'];} ?>">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="MotherName">MotherName</label>
-                    <input type="text" class="form-control" name="mother" value="<?php if (isset($_GET['rollno'])){echo $studata['motherName'];} ?>">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label>Gender</label>
-                    <select class="form-control" name="gender" value="<?php echo $studata['gender'] ?>">
-                      <option <?php if (isset($_GET['rollno'])){echo ($studata['gender'] == 'Male')?'selected':'';} ?> value="Male">Male</option>
-                      <option <?php if (isset($_GET['rollno'])){echo ($studata['gender'] == 'Female')?'selected':'';} ?> value="Female">Female</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-2">
-                    <label for="Class">Class</label>
-                    <input type="text" class="form-control" name="cls" value="<?php if (isset($_GET['rollno'])){echo $studata['class'];} ?>">
-                  </div>
-                  <div class="form-group col-md-10">
-                      <label for="Phone">Phone</label>
-                      <input type="text" class="form-control" name="phonenumber" value="<?php if (isset($_GET['rollno'])){echo $studata['phone'];} ?>">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label>Course Name</label>
-
-                    <select class="form-control" name="courseid">
-                      <?php
-                          get_course_dropdown($conn, $studata['course_id'] );
-                      ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                  <label>Address</label>
-                  <textarea class="form-control" rows="3" name="address"><?php if (isset($_GET['rollno'])){echo $studata['address'];} ?></textarea>
-                </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4"></div>
-                  <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-block bg-orange margin">Add Student Detail</button>
-                  </div>
-                  <div class="form-group col-md-4">
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    <form action="loginprocess.php" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" name="username" class="form-control" placeholder="Username">
+        <span class="glyphicon  glyphicon-user form-control-feedback"></span>
       </div>
-    </section>
-     </section>
-   </div>
+      <div class="form-group has-feedback">
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <?php
+          if(isset($_GET['err']) && $_GET['err']==1)
+          {
+           ?>
+           <span style="color:red;">INVALID USERNAME AND PASSWORD</span>
+    <?php }?>
+    <?php
+    if(isset($_GET['reg']) && $_GET['reg']==1)
+    {
+     ?>
+     <span style="color:green;">You're registered Successfully</span>
+<?php }?>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+    <div class="row" style="margin-top:10px;">
+      <div class="col-xs-12">
+        <a href="register.php" class="text-center">Register a new membership</a>
+      </div>
+    </div>
 
-   <?php
-   include('footer.php');
-    ?>
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' /* optional */
+    });
+  });
+</script>
+</body>
+</html>
